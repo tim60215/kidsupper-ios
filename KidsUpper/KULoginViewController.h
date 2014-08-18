@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GAITrackedViewController.h"
 
-@interface KULoginViewController : UIViewController
+
+@interface KULoginViewController : GAITrackedViewController <NSURLConnectionDataDelegate>
+
+@property (strong, nonatomic) IBOutlet UIImageView *logoImageView;
+- (IBAction)signupButton:(UIButton *)sender;
+- (IBAction)loginButton:(UIButton *)sender;
+- (IBAction)loginWithFBButton:(UIButton *)sender;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
 
 @end

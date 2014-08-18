@@ -7,6 +7,7 @@
 //
 
 #import "KUExerciseViewController.h"
+#import "KUKidsObject.h"
 
 @interface KUExerciseViewController ()
 
@@ -26,6 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.screenName = @"Type Exercise";
     // Do any additional setup after loading the view.
 }
 
@@ -33,6 +35,15 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(KUKidsObject *)returnNewKUKidsObject{
+    KUKidsObject *addKidsObject = [[KUKidsObject alloc] init];
+    addKidsObject.exerciseKind = self.exerciseNameTextField.text;
+    addKidsObject.exerciseTime = self.exerciserTimeTextField.text;
+    
+    return addKidsObject;
+    
 }
 
 /*
@@ -46,4 +57,35 @@
 }
 */
 
+
+- (IBAction)doneButton:(UIButton *)sender {
+    KUKidsObject *newKidsObject = [self returnNewKUKidsObject];
+    if (self.exerciseNameTextField.text.length!=0 && self.exerciserTimeTextField.text.length!=0) {
+        PFObject *kidsExerciseKind = [PFObject objectWithClassName:KIDS_EXERCISE_KIND];
+        PFObject *kidsExerciseTime = [PFObject objectWithClassName:KIDS_EXERCISE_TIME];
+        [kidsExerciseKind setObject:[PFUser currentUser] forKey:kCCUserProfileKey];
+        [kidsExerciseTime setObject:[PFUser currentUser] forKey:kCCUserProfileKey];
+        kidsExerciseKind[@"exerciseKind"] = newKidsObject.exerciseKind;
+        kidsExerciseKind[@"exerciseTime"] = newKidsObject.exerciseTime;
+        
+        [kidsExerciseKind saveInBackground];
+        [kidsExerciseTime saveInBackground];
+        
+        //        [[NSUserDefaults standardUserDefaults] setObject:self.weightTextField.text forKey:KIDS_WEIGHT];
+        //        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self.delegate addKidsObject:newKidsObject];
+        
+    }
+    else {
+        UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You haven't enter new records." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertview show];
+    }
+
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+    [self.exerciseNameTextField endEditing:YES];
+    return YES;
+}
 @end

@@ -7,7 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KUKidsObject.h"
+#import "GAITrackedViewController.h"
 
-@interface KUHeightViewController : UIViewController
+@protocol KUHeightViewControllerDelegate <NSObject>
+
+-(void)addKidsObject:(KUKidsObject *)kidsObject;
+
+@end
+
+@interface KUHeightViewController : GAITrackedViewController
+
+@property (weak, nonatomic) id<KUHeightViewControllerDelegate>delegate;
+- (IBAction)doneButton:(UIButton *)sender;
+@property (strong, nonatomic) IBOutlet UITextField *heightTextField;
 
 @end

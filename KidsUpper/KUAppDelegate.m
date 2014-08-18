@@ -8,13 +8,41 @@
 
 #import "KUAppDelegate.h"
 
+
+
+
 @implementation KUAppDelegate
+
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    return YES;
+    [Parse setApplicationId:@"O9VpnKHnRIGnutXN6UfjsaAoPdsA7sv5EYzRzucR"
+                  clientKey:@"1RXTUjo69Yh8u5Mwy9fD1SieSOcm7hForWsTOZGg"];
+    [PFFacebookUtils initializeFacebook];
+    // Optional: automatically send uncaught exceptions to Google Analytics.
+     [GAI sharedInstance].trackUncaughtExceptions = YES;
+     
+     // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
+     [GAI sharedInstance].dispatchInterval = 20;
+     
+     // Optional: set Logger to VERBOSE for debug information.
+     [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+     
+     // Initialize tracker. Replace with your tracking ID.
+     [[GAI sharedInstance] trackerWithTrackingId:@"UA-43615226-2"];
+
+        return YES;
 }
+
+-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    //    return [PFFacebookUtils handleOpenURL:url];
+    return [FBAppCall handleOpenURL:url sourceApplication:nil];
+    
+}
+
+
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {

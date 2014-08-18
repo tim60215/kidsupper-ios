@@ -7,7 +7,27 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KUKidsObject.h"
+#import "GAITrackedViewController.h"
 
-@interface KUAddFoodViewController : UIViewController
+@protocol KUAddFoodViewControllerDelegate <NSObject>
+
+
+-(void)addKidsObject:(KUKidsObject *)kidsObject;
+
+@end
+
+
+@interface KUAddFoodViewController : GAITrackedViewController <UITextFieldDelegate>
+@property (strong, nonatomic) id<KUAddFoodViewControllerDelegate>delegate;
+- (IBAction)testAction:(UIButton *)sender;
+- (IBAction)doneButton:(UIBarButtonItem *)sender;
+
+
+
+
+@property (strong, nonatomic) IBOutlet UITextField *eatKindTextField;
+@property (strong, nonatomic) IBOutlet UITextField *eatAmountTextField;
+
 
 @end

@@ -1,0 +1,22 @@
+PODS:
+  - Bolts (1.1.1)
+  - Facebook-iOS-SDK (3.17.0):
+    - Bolts
+  - Parse (1.2.20):
+    - Facebook-iOS-SDK (~> 3.11)
+  - PNChart (0.5):
+    - UICountingLabel (~> 1.0.0)
+  - UICountingLabel (1.0.0)
+
+DEPENDENCIES:
+  - Parse
+  - PNChart
+
+SPEC CHECKSUMS:
+  Bolts: 0ca796081c3e7c139bd86d6903c27f1b83036a5d
+  Facebook-iOS-SDK: f20274d809f112ba540842e2b6cbe50128d51b7b
+  Parse: 28c0dc54f30201a369d29a2f76c09fa43b2add16
+  PNChart: 0d0cf4531de3aa7f2b12434a54845d70d9c9cfe3
+  UICountingLabel: 0a0e9e34bf4690dbd127aaec552d19ed938087a9
+
+COCOAPODS: 0.33.1

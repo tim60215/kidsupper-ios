@@ -7,9 +7,14 @@
 //
 
 #import "KUExerciseTableViewController.h"
+#import "KUKidsObject.h"
+#import "GAIDictionaryBuilder.h"
 
 @interface KUExerciseTableViewController ()
-
+@property (strong, nonatomic) NSArray *exerciseKind;
+@property (strong, nonatomic) PFObject *myExerciseKind;
+@property (strong, nonatomic) NSArray *exerciseTime;
+@property (strong, nonatomic) PFObject *myExerciseTime;
 @end
 
 @implementation KUExerciseTableViewController
@@ -26,6 +31,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
+    PFQuery *query = [PFQuery queryWithClassName:KIDS_EXERCISE_KIND];
+    PFQuery *queryTime = [PFQuery queryWithClassName:KIDS_EXERCISE_TIME];
+    [query includeKey:kCCUserProfileKey];
+    [queryTime includeKey:kCCUserProfileKey];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            self.exerciseKind = objects;
+            NSLog(@"%@", self.exerciseKind);
+            [self.tableView reloadData];
+        }
+        else NSLog(@"%@",error);
+    }];
+    [queryTime findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            self.exerciseTime = objects;
+            NSLog(@"%@", self.exerciseTime);
+            [self.tableView reloadData];
+        }
+        else NSLog(@"%@",error);
+    }];
+
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -33,6 +60,15 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Exercise Table"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -44,28 +80,34 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
+
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
+
     // Return the number of rows in the section.
-    return 0;
+    return [self.exerciseKind count];
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    self.myExerciseKind = [self.exerciseKind objectAtIndex:indexPath.row];
+    self.myExerciseTime = [self.exerciseTime objectAtIndex:indexPath.row];
+    NSLog(@"%@",self.exerciseKind);
+    cell.textLabel.text =[NSString stringWithFormat:@"從事 %@ ", [self.myExerciseKind objectForKey:@"exerciseKind"]];
+    cell.detailTextLabel.text =[NSString stringWithFormat:@"長達 %@ 分鐘",[self.myExerciseTime objectForKey:@"exerciseTime"]];
+    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.detailTextLabel.textColor = [UIColor whiteColor];
     // Configure the cell...
-    
-    return cell;
+     return cell;
 }
-*/
+-(void)addKidsObject:(KUKidsObject *)kidsObject;{
+}
 
 /*
 // Override to support conditional editing of the table view.

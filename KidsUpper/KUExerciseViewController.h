@@ -7,7 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KUKidsObject.h"
+#import "GAITrackedViewController.h"
 
-@interface KUExerciseViewController : UIViewController
+@protocol KUExerciseViewControllerDelegate <NSObject>
+
+-(void)addKidsObject:(KUKidsObject *)kidsObject;
+
+@end
+
+@interface KUExerciseViewController : GAITrackedViewController
+@property (weak, nonatomic) id<KUExerciseViewControllerDelegate>delegate;
+@property (strong, nonatomic) IBOutlet UITextField *exerciseNameTextField;
+@property (strong, nonatomic) IBOutlet UITextField *exerciserTimeTextField;
+- (IBAction)doneButton:(UIButton *)sender;
+
 
 @end

@@ -7,7 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KUKidsObject.h"
+#import "GAITrackedViewController.h"
 
-@interface KUSleepViewController : UIViewController
+
+@protocol KUSleepViewControllerDelegate <NSObject>
+
+-(void)addKidsObject:(KUKidsObject *)kidsObject;
+
+@end
+
+@interface KUSleepViewController : GAITrackedViewController
+
+@property (weak, nonatomic) id<KUSleepViewControllerDelegate>delegate;
+- (IBAction)doneButton:(UIButton *)sender;
+- (IBAction)startSleepTimeButton:(UIButton *)sender;
+- (IBAction)endSleepTime:(UIButton *)sender;
+@property (strong, nonatomic) IBOutlet UILabel *startSleepTimeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *endSleepTimeLabel;
+
+
 
 @end

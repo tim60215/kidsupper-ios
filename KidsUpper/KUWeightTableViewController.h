@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KUWeightViewController.h"
 
-@interface KUWeightTableViewController : UITableViewController
+@interface KUWeightTableViewController : UITableViewController <KUWeightViewControllerDelegate>
 
 @end

@@ -7,7 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KUKidsObject.h"
+#import "GAITrackedViewController.h"
 
-@interface KUWeightViewController : UIViewController
+@protocol KUWeightViewControllerDelegate <NSObject>
+
+-(void)addKidsWeightObject:(KUKidsObject *)kidsObject;
+
+@end
+
+@interface KUWeightViewController : GAITrackedViewController
+@property (weak, nonatomic) id<KUWeightViewControllerDelegate>delegate;
+@property (strong, nonatomic) IBOutlet UITextField *weightTextField;
+- (IBAction)doneButton:(UIButton *)sender;
+
 
 @end

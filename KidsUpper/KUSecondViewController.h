@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GAITrackedViewController.h"
 
-@interface KUSecondViewController : UIViewController
 
+@interface KUSecondViewController : GAITrackedViewController
+- (IBAction)heightButton:(UIButton *)sender;
+- (IBAction)weightButton:(UIButton *)sender;
+- (IBAction)sleepButton:(UIButton *)sender;
+- (IBAction)exerciseButton:(UIButton *)sender;
+- (IBAction)foodButton:(UIButton *)sender;
 @end

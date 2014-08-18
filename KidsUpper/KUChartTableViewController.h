@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PNChartDelegate.h"
+#import "PNChart.h"
+#import "KUHeightViewController.h"
 
-@interface KUChartTableViewController : UITableViewController
+@interface KUChartTableViewController : UITableViewController <PNChartDelegate,KUHeightViewControllerDelegate>
+
+@property (nonatomic) PNBarChart * barChart;
+
 
 @end

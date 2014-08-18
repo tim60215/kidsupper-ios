@@ -7,6 +7,7 @@
 //
 
 #import "KUWeightViewController.h"
+#import "KUKidsObject.h"
 
 @interface KUWeightViewController ()
 
@@ -26,6 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.screenName = @"TypeWeight";
     // Do any additional setup after loading the view.
 }
 
@@ -35,6 +37,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(KUKidsObject *)returnNewKUKidsObject{
+    KUKidsObject *addKidsWeightObject = [[KUKidsObject alloc] init];
+    addKidsWeightObject.weight = [self.weightTextField.text floatValue];
+    
+    return addKidsWeightObject;
+    
+}
 /*
 #pragma mark - Navigation
 
@@ -46,4 +55,42 @@
 }
 */
 
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [self.weightTextField resignFirstResponder];
+    return YES;
+}
+
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    if ([text isEqualToString:@"\n"]) {
+        [self.weightTextField resignFirstResponder];
+        return NO;
+    }
+    return YES;
+    
+}
+
+
+
+- (IBAction)doneButton:(UIButton *)sender {
+    KUKidsObject *newKidsObject = [self returnNewKUKidsObject];
+    if (self.weightTextField.text.length!=0) {
+        PFObject *kidsWeight = [PFObject objectWithClassName:KIDS_WEIGHT];
+        [kidsWeight setObject:[PFUser currentUser] forKey:kCCUserProfileKey];
+        kidsWeight[@"myKidsWeight"] = @(newKidsObject.weight);
+        [kidsWeight saveInBackground];
+        NSLog(@"%@", kidsWeight[@"myKidsWeight"]);
+        
+        //        [[NSUserDefaults standardUserDefaults] setObject:self.heightTextField.text forKey:KIDS_HEIGHT];
+        //        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self.delegate addKidsWeightObject:newKidsObject];
+        
+    }
+    else {
+        UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You haven't enter new records." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertview show];
+    }
+    
+    
+}
 @end

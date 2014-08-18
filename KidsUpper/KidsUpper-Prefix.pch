@@ -13,4 +13,12 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import <Parse/Parse.h>
+    #import "KUConstants.h"
+    #import "GAI.h"
+    #import "GAIFields.h"
+    #import "GAIDictionaryBuilder.h"
+@import UIKit;
+@import Foundation;
+
 #endif

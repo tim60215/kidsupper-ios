@@ -26,6 +26,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.screenName = @"signUp";
+    self.activityIndicator.hidden = YES;
+
     // Do any additional setup after loading the view.
 }
 
@@ -46,4 +49,45 @@
 }
 */
 
+- (IBAction)signupButton:(UIButton *)sender {
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    
+    [tracker set:kGAIScreenName value:@"signUp"];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"     // Event category (required)
+                                                          action:@"button_press"  // Event action (required)
+                                                           label:@"sign up button"          // Event label
+                                                           value:nil] build]];
+    [tracker set:kGAIScreenName value:nil];
+
+    //1
+    PFUser *user = [PFUser user];
+    //2
+    user.username = self.usernameEntry.text;
+    user.password = self.passwordEntry.text;
+    user.email = self.emailEntry.text;
+    //3
+    if ([self.passwordEntry.text isEqualToString:self.confirmPasswordEntry.text]){
+    
+    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            //The registration was successful, go to the wall
+            [self performSegueWithIdentifier:@"signUptoTabBarSegue" sender:self];
+            
+        }
+        else {
+            //Something bad has occurred
+            
+            UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"輸入錯誤" message:@"密碼必須和確認密碼一致！" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+            [errorAlertView show];
+        }
+    }];
+    }
+    else {
+        //Something bad has occurred
+        
+        UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"輸入錯誤" message:@"密碼必須和確認密碼一致！" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [errorAlertView show];
+    }
+    
+    }
 @end

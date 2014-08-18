@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GAITrackedViewController.h"
 
-@interface KUThirdViewController : UIViewController
+
+@interface KUThirdViewController : GAITrackedViewController
+@property (strong, nonatomic) IBOutlet UISwitch *manSwitch;
+@property (strong, nonatomic) IBOutlet UISwitch *womanSwitch;
+@property (strong, nonatomic) IBOutlet UISlider *ageSlider;
+- (IBAction)logoutButton:(UIButton *)sender;
+@property (strong, nonatomic) IBOutlet UILabel *ageLabel;
+
+
+
 
 @end

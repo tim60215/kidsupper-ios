@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KUHeightViewController.h"
 
-@interface KUHeightTableViewController : UITableViewController
+@interface KUHeightTableViewController : UITableViewController <KUHeightViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic,strong) KUKidsObject *kids;
+@property (strong, nonatomic) NSMutableArray *addkidsObject;
 
 @end

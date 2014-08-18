@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KUKnowledgeTableViewController : UITableViewController
 
+@interface KUKnowledgeTableViewController : UITableViewController 
+@property (strong, nonatomic) NSMutableArray *planets;
+@property (strong, nonatomic) NSMutableArray *addedSpaceObject;
 @end

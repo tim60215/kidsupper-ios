@@ -7,8 +7,13 @@
 //
 
 #import "KUEatTableViewController.h"
+#import "GAIDictionaryBuilder.h"
 
 @interface KUEatTableViewController ()
+@property (strong, nonatomic) NSArray *foodKind;
+@property (strong, nonatomic) PFObject *myFoodKind;
+@property (strong, nonatomic) NSArray *foodAmount;
+@property (strong, nonatomic) PFObject *myFoodAmount;
 
 @end
 
@@ -26,6 +31,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
+    PFQuery *query = [PFQuery queryWithClassName:KIDS_FOOD_KIND];
+    PFQuery *queryAmount = [PFQuery queryWithClassName:KIDS_FOOD_AMOUNT];
+    [query includeKey:kCCUserProfileKey];
+    [queryAmount includeKey:kCCUserProfileKey];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            self.foodKind = objects;
+            NSLog(@"%@", self.foodKind);
+            [self.tableView reloadData];
+        }
+        else NSLog(@"%@",error);
+    }];
+    [queryAmount findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            self.foodAmount = objects;
+            NSLog(@"%@", self.foodAmount);
+            [self.tableView reloadData];
+        }
+        else NSLog(@"%@",error);
+    }];
+
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -33,6 +60,15 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Eat Table"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -44,28 +80,36 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
+
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
+
     // Return the number of rows in the section.
-    return 0;
+    return [self.foodKind count];
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    self.myFoodKind = [self.foodKind objectAtIndex:indexPath.row];
+    self.myFoodAmount = [self.foodAmount objectAtIndex:indexPath.row];
+    NSLog(@"%@",self.foodKind);
+    cell.textLabel.text = [NSString stringWithFormat:@"吃了 %@ ", [self.myFoodKind objectForKey:@"kidsFoodKind"]];
+    cell.detailTextLabel.text =[NSString stringWithFormat:@"%@ 份", [self.myFoodAmount objectForKey:@"kidsFoodAmount"]];
+    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.detailTextLabel.textColor = [UIColor whiteColor];
     
     // Configure the cell...
-    
     return cell;
 }
-*/
+
+-(void)addKidsObject:(KUKidsObject *)kidsObject{
+}
 
 /*
 // Override to support conditional editing of the table view.

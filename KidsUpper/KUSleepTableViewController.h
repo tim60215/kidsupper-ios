@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KUSleepViewController.h"
 
-@interface KUSleepTableViewController : UITableViewController
+@interface KUSleepTableViewController : UITableViewController <KUSleepViewControllerDelegate>
+
 
 @end

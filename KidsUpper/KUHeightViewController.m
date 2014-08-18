@@ -26,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.screenName = @"Type Height";
     // Do any additional setup after loading the view.
 }
 
@@ -46,4 +47,53 @@
 }
 */
 
+-(KUKidsObject *)returnNewKUKidsObject{
+    KUKidsObject *addKidsObject = [[KUKidsObject alloc] init];
+    addKidsObject.height = [self.heightTextField.text floatValue];
+    
+    return addKidsObject;
+
+}
+
+- (IBAction)doneButton:(UIButton *)sender {
+    KUKidsObject *newKidsObject = [self returnNewKUKidsObject];
+    if (self.heightTextField.text.length!=0) {
+        PFObject *kidsHeight = [PFObject objectWithClassName:KIDS_HEIGHT];
+        [kidsHeight setObject:[PFUser currentUser] forKey:kCCUserProfileKey];
+        kidsHeight[@"height"] = @(newKidsObject.height);
+        [kidsHeight saveInBackground];
+        
+//        [[NSUserDefaults standardUserDefaults] setObject:self.heightTextField.text forKey:KIDS_HEIGHT];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self.delegate addKidsObject:newKidsObject];
+        
+    }
+    else {
+        UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You haven't enter new records." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertview show];
+    }
+    
+    
+}
+
+#pragma mark - UITextField Delegate
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+    [self.heightTextField resignFirstResponder];
+    return YES;
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [self.heightTextField resignFirstResponder];
+    return YES;
+}
+
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    if ([text isEqualToString:@"\n"]) {
+        [self.heightTextField resignFirstResponder];
+        return NO;
+    }
+    return YES;
+    
+}
 @end

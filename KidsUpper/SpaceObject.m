@@ -21,13 +21,8 @@
     self = [super init];
     
     self.name = data[PLANET_NAME];
-    self.gForce = [data[PLANET_GRAVITY] floatValue];
-    self.dayLength = [data[PLANET_DAY_LENGTH] floatValue];
-    self.yearLength = [data[PLANET_YEAR_LENGTH] floatValue];
-    self.diameter = [data[PLANET_DIAMETER] floatValue];
-    self.temperature = [data[PLANET_TEMPERATURE] intValue];
     self.nickname = data[PLANET_NICKNAME];
-    self.interstfacts = data[PLANET_INTERESTING_FACT];
+    self.url = data[PLANET_URL];
     
     self.spaceImage = image;
     return self;

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KUAddFoodViewController.h"
 
-@interface KUEatTableViewController : UITableViewController
+@interface KUEatTableViewController : UITableViewController <KUAddFoodViewControllerDelegate>
 
 @end

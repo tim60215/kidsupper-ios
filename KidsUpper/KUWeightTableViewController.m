@@ -7,9 +7,12 @@
 //
 
 #import "KUWeightTableViewController.h"
+#import "KUKidsObject.h"
+#import "GAIDictionaryBuilder.h"
 
 @interface KUWeightTableViewController ()
-
+@property (strong, nonatomic) NSArray *weight;
+@property (strong, nonatomic) PFObject *myweight;
 @end
 
 @implementation KUWeightTableViewController
@@ -26,6 +29,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
+    PFQuery *query = [PFQuery queryWithClassName:KIDS_WEIGHT];
+    [query includeKey:kCCUserProfileKey];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            self.weight = objects;
+            NSLog(@"%@", self.weight);
+            [self.tableView reloadData];
+        }
+        else NSLog(@"%@",error);
+    }];
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -33,6 +48,15 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Weight Table"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -44,29 +68,37 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
+
     // Return the number of rows in the section.
-    return 0;
+    return [self.weight count];
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
 
+ - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ static NSString *CellIdentifier = @"Cell";
+ UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+ self.myweight = [self.weight objectAtIndex:indexPath.row];
+ 
+ cell.textLabel.text =[NSString stringWithFormat:@"%@ ", [self.myweight objectForKey:@"myKidsWeight"]];
+     cell.detailTextLabel.text = @"kg";
+     cell.textLabel.textColor = [UIColor whiteColor];
+     cell.detailTextLabel.textColor = [UIColor whiteColor];
+ // Configure the cell...
+
+ return cell;
+ }
+
+
+-(void)addKidsWeightObject:(KUKidsObject *)kidsObject{
+
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

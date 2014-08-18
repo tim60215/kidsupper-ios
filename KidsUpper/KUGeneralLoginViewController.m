@@ -26,6 +26,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.screenName = @"generalLogin";
+    self.activityIndicator.hidden = YES;
+
     // Do any additional setup after loading the view.
 }
 
@@ -45,5 +48,32 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)loginButton:(UIButton *)sender {
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    
+    [tracker set:kGAIScreenName value:@"generalLogin"];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"     // Event category (required)
+                                                          action:@"button_press"  // Event action (required)
+                                                           label:@"general login button"          // Event label
+                                                           value:nil] build]];
+    [tracker set:kGAIScreenName value:nil];
+
+    [PFUser logInWithUsernameInBackground:self.usernameTextField.text password:self.passwordTextField.text block:^(PFUser *user, NSError *error) {
+        if (user &&!error) {
+            //Open the wall
+            [self performSegueWithIdentifier:@"generalLoginToTabBar" sender:self];
+        }
+        else {
+            //Something bad has ocurred
+            UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"輸入錯誤" message:@"帳號和密碼不相符" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+            [errorAlertView show];
+        }
+    }];
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
 
 @end

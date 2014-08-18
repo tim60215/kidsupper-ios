@@ -7,9 +7,13 @@
 //
 
 #import "KUSleepTableViewController.h"
+#import "GAIDictionaryBuilder.h"
 
 @interface KUSleepTableViewController ()
-
+@property (strong, nonatomic) NSArray *startSleepTime;
+@property (strong, nonatomic) PFObject *myStartSleepTime;
+@property (strong, nonatomic) NSArray *endSleepTime;
+@property (strong, nonatomic) PFObject *myEndSleepTime;
 @end
 
 @implementation KUSleepTableViewController
@@ -26,13 +30,43 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
+    PFQuery *query = [PFQuery queryWithClassName:KIDS_START_SLEEP_TIME];
+    PFQuery *queryEnd = [PFQuery queryWithClassName:KIDS_END_SLEEP_TIME];
+    [query includeKey:kCCUserProfileKey];
+    [queryEnd includeKey:kCCUserProfileKey];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            self.startSleepTime = objects;
+            NSLog(@"%@", self.startSleepTime);
+            [self.tableView reloadData];
+        }
+        else NSLog(@"%@",error);
+    }];
+    [queryEnd findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            self.endSleepTime = objects;
+            NSLog(@"%@", self.endSleepTime);
+            [self.tableView reloadData];
+        }
+        else NSLog(@"%@",error);
+    }];
     
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Sleep Table"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -44,28 +78,32 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
+
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
+
     // Return the number of rows in the section.
-    return 0;
+    return [self.startSleepTime count];
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    self.myStartSleepTime = [self.startSleepTime objectAtIndex:indexPath.row];
+    self.myEndSleepTime = [self.endSleepTime objectAtIndex:indexPath.row];
+    NSLog(@"%@",self.startSleepTime);
+    cell.textLabel.text =[NSString stringWithFormat:@"從 %@ 到 %@", [self.myStartSleepTime objectForKey:@"startSleepTime"], [self.myEndSleepTime objectForKey:@"endSleepTime"]];
+    cell.textLabel.textColor = [UIColor whiteColor];
     // Configure the cell...
-    
     return cell;
 }
-*/
+-(void)addKidsObject:(KUKidsObject *)kidsObject{
+}
 
 /*
 // Override to support conditional editing of the table view.

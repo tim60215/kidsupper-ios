@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KUExerciseViewController.h"
 
-@interface KUExerciseTableViewController : UITableViewController
+@interface KUExerciseTableViewController : UITableViewController <KUExerciseViewControllerDelegate>
 
 @end
