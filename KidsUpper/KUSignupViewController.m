@@ -28,6 +28,10 @@
     [super viewDidLoad];
     self.screenName = @"signUp";
     self.activityIndicator.hidden = YES;
+    self.usernameEntry.delegate = self;
+    self.passwordEntry.delegate = self;
+    self.confirmPasswordEntry.delegate = self;
+    self.emailEntry.delegate = self;
 
     // Do any additional setup after loading the view.
 }
@@ -90,4 +94,37 @@
     }
     
     }
+
+#pragma mark - UITextField Delegate
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+    [self.usernameEntry resignFirstResponder];
+    [self.passwordEntry resignFirstResponder];
+    [self.emailEntry resignFirstResponder];
+    [self.confirmPasswordEntry resignFirstResponder];
+    return YES;
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [self.usernameEntry resignFirstResponder];
+    [self.passwordEntry resignFirstResponder];
+    [self.emailEntry resignFirstResponder];
+    [self.confirmPasswordEntry resignFirstResponder];
+    [textField resignFirstResponder];
+    return YES;
+}
+
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    if ([text isEqualToString:@"\n"]) {
+        [self.usernameEntry resignFirstResponder];
+        [self.passwordEntry resignFirstResponder];
+        [self.emailEntry resignFirstResponder];
+        [self.confirmPasswordEntry resignFirstResponder];
+        return NO;
+    }
+    return YES;
+    
+}
+
+
 @end

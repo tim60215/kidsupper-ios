@@ -30,6 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
     PFQuery *query = [PFQuery queryWithClassName:KIDS_START_SLEEP_TIME];
     PFQuery *queryEnd = [PFQuery queryWithClassName:KIDS_END_SLEEP_TIME];
@@ -97,7 +98,7 @@
     self.myStartSleepTime = [self.startSleepTime objectAtIndex:indexPath.row];
     self.myEndSleepTime = [self.endSleepTime objectAtIndex:indexPath.row];
     NSLog(@"%@",self.startSleepTime);
-    cell.textLabel.text =[NSString stringWithFormat:@"從 %@ 到 %@", [self.myStartSleepTime objectForKey:@"startSleepTime"], [self.myEndSleepTime objectForKey:@"endSleepTime"]];
+    cell.textLabel.text =[NSString stringWithFormat:@"從 %@到%@", [self.myStartSleepTime objectForKey:@"startSleepTime"], [self.myEndSleepTime objectForKey:@"endSleepTime"]];
     cell.textLabel.textColor = [UIColor whiteColor];
     // Configure the cell...
     return cell;

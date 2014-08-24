@@ -28,6 +28,7 @@
 {
     [super viewDidLoad];
     self.screenName = @"Type Sleep";
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     // Do any additional setup after loading the view.
 }
 
@@ -47,7 +48,7 @@
     NSLog(@"New Date: %@", sender.date);
     NSDate *date = sender.date;
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-mm-dd hh:mm:ss"];
+    [formatter setDateFormat:@"mm-dd hh:mm:ss"];
     
     NSString *stringFromDate = [formatter stringFromDate:date];
     self.startSleepTimeLabel.text = stringFromDate;
@@ -57,7 +58,7 @@
     NSLog(@"New Date: %@", endsender.date);
     NSDate *date = endsender.date;
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-mm-dd hh:mm:ss"];
+    [formatter setDateFormat:@"mm-dd hh:mm:ss"];
     
     NSString *stringFromDate = [formatter stringFromDate:date];
     self.endSleepTimeLabel.text = stringFromDate;
@@ -412,4 +413,5 @@
     [UIView commitAnimations];
 
 }
+
 @end

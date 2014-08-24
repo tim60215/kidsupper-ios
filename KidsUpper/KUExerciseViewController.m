@@ -28,6 +28,9 @@
 {
     [super viewDidLoad];
     self.screenName = @"Type Exercise";
+    self.exerciseNameTextField.delegate = self;
+    self.exerciserTimeTextField.delegate = self;
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     // Do any additional setup after loading the view.
 }
 
@@ -83,9 +86,9 @@
 
 }
 
-- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
-{
-    [self.exerciseNameTextField endEditing:YES];
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
     return YES;
 }
+
 @end

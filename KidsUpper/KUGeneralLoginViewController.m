@@ -28,7 +28,8 @@
     [super viewDidLoad];
     self.screenName = @"generalLogin";
     self.activityIndicator.hidden = YES;
-
+    self.usernameTextField.delegate = self;
+    self.passwordTextField.delegate = self;
     // Do any additional setup after loading the view.
 }
 

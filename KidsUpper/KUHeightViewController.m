@@ -27,6 +27,8 @@
 {
     [super viewDidLoad];
     self.screenName = @"Type Height";
+    self.heightTextField.delegate = self;
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     // Do any additional setup after loading the view.
 }
 
@@ -84,7 +86,7 @@
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
-    [self.heightTextField resignFirstResponder];
+    [textField resignFirstResponder];
     return YES;
 }
 

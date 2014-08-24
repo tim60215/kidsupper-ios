@@ -16,7 +16,7 @@
 
 @end
 
-@interface KUExerciseViewController : GAITrackedViewController
+@interface KUExerciseViewController : GAITrackedViewController <UITextFieldDelegate>
 @property (weak, nonatomic) id<KUExerciseViewControllerDelegate>delegate;
 @property (strong, nonatomic) IBOutlet UITextField *exerciseNameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *exerciserTimeTextField;

@@ -28,6 +28,8 @@
 {
     [super viewDidLoad];
     self.screenName = @"TypeWeight";
+    self.weightTextField.delegate = self;
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     // Do any additional setup after loading the view.
 }
 
@@ -55,11 +57,11 @@
 }
 */
 
-
--(BOOL)textFieldShouldReturn:(UITextField *)textField{
-    [self.weightTextField resignFirstResponder];
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
     return YES;
 }
+
 
 -(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
     if ([text isEqualToString:@"\n"]) {
@@ -93,4 +95,5 @@
     
     
 }
+
 @end

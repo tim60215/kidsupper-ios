@@ -12,7 +12,7 @@
 #import "PNLineChartDataItem.h"
 
 @interface KUChartTableViewController ()
-@property (strong, nonatomic) NSArray *height;
+@property (strong, nonatomic) NSMutableArray *height;
 @property (strong, nonatomic) PFObject *myheight;
 
 @end
@@ -61,9 +61,7 @@
         [query includeKey:kCCUserProfileKey];
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error) {
-                
-                
-                self.height = objects;
+                self.height = [objects mutableCopy];
                 for (int i = 0; i<=[self.height count]; i ++) {
                     self.myheight = [self.height objectAtIndex:i];
                     
@@ -78,7 +76,7 @@
                     PNLineChart * lineChart = [[PNLineChart alloc] initWithFrame:CGRectMake(0, 135.0, SCREEN_WIDTH, 200.0)];
                     lineChart.yLabelFormat = @"%1.1f";
                     lineChart.backgroundColor = [UIColor clearColor];
-                    [lineChart setXLabels:@[@"SEP 1",@"SEP 2",@"SEP 3",@"SEP 4",@"SEP 5",@"7",@"8"]];
+                    [lineChart setXLabels:@[@"SEP 1",@"SEP 2",@"SEP 3",@"SEP 4",@"SEP 5",@"6",@"7"]];
                     lineChart.showCoordinateAxis = YES;
                     
                     // Line Chart Nr.1
@@ -121,7 +119,7 @@
         }];
         
 
-            }
+    }
     else if ([segue.identifier isEqualToString:@"barChart"])
     {
         //Add BarChart

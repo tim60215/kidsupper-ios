@@ -18,6 +18,10 @@
 {
     [super viewDidLoad];
     self.screenName = @"first";
+//    self.navigationItem.leftBarButtonItem = nil;
+    self.navigationItem.hidesBackButton = YES;
+    self.tabBarController.navigationItem.hidesBackButton = YES;
+    
 
 
 	// Do any additional setup after loading the view, typically from a nib.

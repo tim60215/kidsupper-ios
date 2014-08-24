@@ -257,7 +257,7 @@ static const NSTimeInterval kDefaultDuration = 0.35;
     if (self.backGroundImageView == nil)
     {
         self.backGroundImageView = [[UIImageView alloc]initWithFrame:self.bounds];
-        [self.backGroundImageView setBackgroundColor:[UIColor clearColor]];
+        [self.backGroundImageView setBackgroundColor:[UIColor whiteColor]];
         [self.backGroundImageView setAutoresizingMask:UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth];
         [self addSubview:self.backGroundImageView];
     }

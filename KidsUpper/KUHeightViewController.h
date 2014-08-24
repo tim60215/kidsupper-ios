@@ -16,7 +16,7 @@
 
 @end
 
-@interface KUHeightViewController : GAITrackedViewController
+@interface KUHeightViewController : GAITrackedViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) id<KUHeightViewControllerDelegate>delegate;
 - (IBAction)doneButton:(UIButton *)sender;

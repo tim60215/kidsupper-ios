@@ -11,11 +11,6 @@
 		0411F789199B3F7F0043C497 /* disclosure@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0411F780199B3F7F0043C497 /* disclosure@2x.png */; };
 		0411F791199B52E70043C497 /* KUAddFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0411F790199B52E70043C497 /* KUAddFoodViewController.m */; };
 		0411F794199B53590043C497 /* VSDropdown.m in Sources */ = {isa = PBXBuildFile; fileRef = 0411F793199B53590043C497 /* VSDropdown.m */; };
-		0411F79A199B72920043C497 /* icon_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 0411F795199B72920043C497 /* icon_menu.png */; };
-		0411F79B199B72920043C497 /* title_bar_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0411F796199B72920043C497 /* title_bar_background.png */; };
-		0411F79C199B72920043C497 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0411F797199B72920043C497 /* Default.png */; };
-		0411F79D199B72920043C497 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0411F798199B72920043C497 /* Default@2x.png */; };
-		0411F79E199B72920043C497 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0411F799199B72920043C497 /* Default-568h@2x.png */; };
 		046B59C7199EFE4800D8F56E /* SpaceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 046B59C4199EFE4800D8F56E /* SpaceObject.m */; };
 		046B59C8199EFE4800D8F56E /* AstronomicalData.m in Sources */ = {isa = PBXBuildFile; fileRef = 046B59C6199EFE4800D8F56E /* AstronomicalData.m */; };
 		046B59CB199EFF9D00D8F56E /* KUKnowledgeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046B59CA199EFF9D00D8F56E /* KUKnowledgeTableViewController.m */; };
@@ -35,6 +30,14 @@
 		046B5A8419A0AFCD00D8F56E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 046B5A8319A0AFCD00D8F56E /* libsqlite3.dylib */; };
 		046B5A8A19A1748100D8F56E /* KUChartTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046B5A8919A1748100D8F56E /* KUChartTableViewController.m */; };
 		046B5A8D19A1756600D8F56E /* KUChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046B5A8C19A1756600D8F56E /* KUChartViewController.m */; };
+		046B5A9019A4DB3000D8F56E /* KUKnowledgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046B5A8F19A4DB3000D8F56E /* KUKnowledgeViewController.m */; };
+		046B5A9419A4E5F300D8F56E /* 長高知識.png in Resources */ = {isa = PBXBuildFile; fileRef = 046B5A9319A4E5F300D8F56E /* 長高知識.png */; };
+		046B5A9A19A9738800D8F56E /* logo120.png in Resources */ = {isa = PBXBuildFile; fileRef = 046B5A9919A9738800D8F56E /* logo120.png */; };
+		046B5A9C19A973CA00D8F56E /* logo80.png in Resources */ = {isa = PBXBuildFile; fileRef = 046B5A9B19A973CA00D8F56E /* logo80.png */; };
+		046B5AA019A9742700D8F56E /* logo58.png in Resources */ = {isa = PBXBuildFile; fileRef = 046B5A9F19A9742700D8F56E /* logo58.png */; };
+		046B5AA419A977F800D8F56E /* launch image2.png in Resources */ = {isa = PBXBuildFile; fileRef = 046B5AA319A977F800D8F56E /* launch image2.png */; };
+		046B5AA619A9787000D8F56E /* launch image1.png in Resources */ = {isa = PBXBuildFile; fileRef = 046B5AA519A9787000D8F56E /* launch image1.png */; };
+		046B5AAA19A98D8800D8F56E /* embeded.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = 046B5AA919A98D8800D8F56E /* embeded.mobileprovision */; };
 		048ACA281999E5E0009D2949 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048ACA271999E5E0009D2949 /* Foundation.framework */; };
 		048ACA2A1999E5E0009D2949 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048ACA291999E5E0009D2949 /* CoreGraphics.framework */; };
 		048ACA2C1999E5E0009D2949 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048ACA2B1999E5E0009D2949 /* UIKit.framework */; };
@@ -52,10 +55,6 @@
 		048ACA561999E5E0009D2949 /* KidsUpperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 048ACA551999E5E0009D2949 /* KidsUpperTests.m */; };
 		048ACA611999E8E5009D2949 /* KUConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 048ACA601999E8E5009D2949 /* KUConstants.m */; };
 		048ACA641999E973009D2949 /* KULoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048ACA631999E973009D2949 /* KULoginViewController.m */; };
-		048ACA6A1999E9E0009D2949 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 048ACA661999E9E0009D2949 /* 1.png */; };
-		048ACA6B1999E9E0009D2949 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 048ACA671999E9E0009D2949 /* 2.png */; };
-		048ACA6C1999E9E0009D2949 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 048ACA681999E9E0009D2949 /* 3.png */; };
-		048ACA6D1999E9E0009D2949 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 048ACA691999E9E0009D2949 /* 4.png */; };
 		048ACA6F1999E9F1009D2949 /* login_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 048ACA6E1999E9F1009D2949 /* login_1.png */; };
 		048ACA711999EA25009D2949 /* wallpaper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 048ACA701999EA25009D2949 /* wallpaper.jpg */; };
 		048ACA741999F2EF009D2949 /* KUHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048ACA731999F2EF009D2949 /* KUHeightViewController.m */; };
@@ -80,13 +79,11 @@
 		04EDF725199DA2560012E773 /* exercise.png in Resources */ = {isa = PBXBuildFile; fileRef = 04EDF724199DA2560012E773 /* exercise.png */; };
 		04EDF727199DA3010012E773 /* food-100 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 04EDF726199DA3010012E773 /* food-100 copy.png */; };
 		04EDF729199DA4D80012E773 /* history.png in Resources */ = {isa = PBXBuildFile; fileRef = 04EDF728199DA4D80012E773 /* history.png */; };
-		04EDF72D199DA5EE0012E773 /* Active-Kids-are-Happy-Kids_Group-of-kids-running-outside_Mouths-of-Mums.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04EDF72C199DA5EE0012E773 /* Active-Kids-are-Happy-Kids_Group-of-kids-running-outside_Mouths-of-Mums.jpg */; };
 		04EDF737199DADDA0012E773 /* staturehistory.png in Resources */ = {isa = PBXBuildFile; fileRef = 04EDF736199DADDA0012E773 /* staturehistory.png */; };
 		04EDF739199DAE450012E773 /* weighthistory.png in Resources */ = {isa = PBXBuildFile; fileRef = 04EDF738199DAE450012E773 /* weighthistory.png */; };
 		04EDF73B199DAED30012E773 /* sleephistory.png in Resources */ = {isa = PBXBuildFile; fileRef = 04EDF73A199DAED30012E773 /* sleephistory.png */; };
 		04EDF73D199DAF370012E773 /* exercisehistory.png in Resources */ = {isa = PBXBuildFile; fileRef = 04EDF73C199DAF370012E773 /* exercisehistory.png */; };
 		04EDF73F199DAFA80012E773 /* eathistory.png in Resources */ = {isa = PBXBuildFile; fileRef = 04EDF73E199DAFA80012E773 /* eathistory.png */; };
-		04EDF741199DB1530012E773 /* parallax-wallpaper-6 copy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04EDF740199DB1530012E773 /* parallax-wallpaper-6 copy.jpg */; };
 		04EDF743199DB2260012E773 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 04EDF742199DB2260012E773 /* setting.png */; };
 		04EDF745199DB48F0012E773 /* logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 04EDF744199DB48F0012E773 /* logout.png */; };
 		04EDF747199DB5540012E773 /* knowledge.png in Resources */ = {isa = PBXBuildFile; fileRef = 04EDF746199DB5540012E773 /* knowledge.png */; };
@@ -113,11 +110,6 @@
 		0411F790199B52E70043C497 /* KUAddFoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KUAddFoodViewController.m; sourceTree = "<group>"; };
 		0411F792199B53590043C497 /* VSDropdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSDropdown.h; sourceTree = "<group>"; };
 		0411F793199B53590043C497 /* VSDropdown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSDropdown.m; sourceTree = "<group>"; };
-		0411F795199B72920043C497 /* icon_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_menu.png; sourceTree = "<group>"; };
-		0411F796199B72920043C497 /* title_bar_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title_bar_background.png; sourceTree = "<group>"; };
-		0411F797199B72920043C497 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		0411F798199B72920043C497 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		0411F799199B72920043C497 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		046B59C3199EFE4800D8F56E /* SpaceObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceObject.h; sourceTree = "<group>"; };
 		046B59C4199EFE4800D8F56E /* SpaceObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaceObject.m; sourceTree = "<group>"; };
 		046B59C5199EFE4800D8F56E /* AstronomicalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AstronomicalData.h; sourceTree = "<group>"; };
@@ -153,6 +145,15 @@
 		046B5A8919A1748100D8F56E /* KUChartTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KUChartTableViewController.m; sourceTree = "<group>"; };
 		046B5A8B19A1756600D8F56E /* KUChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KUChartViewController.h; sourceTree = "<group>"; };
 		046B5A8C19A1756600D8F56E /* KUChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KUChartViewController.m; sourceTree = "<group>"; };
+		046B5A8E19A4DB3000D8F56E /* KUKnowledgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KUKnowledgeViewController.h; sourceTree = "<group>"; };
+		046B5A8F19A4DB3000D8F56E /* KUKnowledgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KUKnowledgeViewController.m; sourceTree = "<group>"; };
+		046B5A9319A4E5F300D8F56E /* 長高知識.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "長高知識.png"; sourceTree = "<group>"; };
+		046B5A9919A9738800D8F56E /* logo120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo120.png; sourceTree = "<group>"; };
+		046B5A9B19A973CA00D8F56E /* logo80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo80.png; sourceTree = "<group>"; };
+		046B5A9F19A9742700D8F56E /* logo58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo58.png; sourceTree = "<group>"; };
+		046B5AA319A977F800D8F56E /* launch image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch image2.png"; sourceTree = "<group>"; };
+		046B5AA519A9787000D8F56E /* launch image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch image1.png"; sourceTree = "<group>"; };
+		046B5AA919A98D8800D8F56E /* embeded.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = embeded.mobileprovision; sourceTree = "<group>"; };
 		048ACA241999E5E0009D2949 /* KidsUpper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidsUpper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		048ACA271999E5E0009D2949 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		048ACA291999E5E0009D2949 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -178,10 +179,6 @@
 		048ACA601999E8E5009D2949 /* KUConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KUConstants.m; sourceTree = "<group>"; };
 		048ACA621999E973009D2949 /* KULoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KULoginViewController.h; sourceTree = "<group>"; };
 		048ACA631999E973009D2949 /* KULoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KULoginViewController.m; sourceTree = "<group>"; };
-		048ACA661999E9E0009D2949 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
-		048ACA671999E9E0009D2949 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
-		048ACA681999E9E0009D2949 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
-		048ACA691999E9E0009D2949 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
 		048ACA6E1999E9F1009D2949 /* login_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_1.png; sourceTree = "<group>"; };
 		048ACA701999EA25009D2949 /* wallpaper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wallpaper.jpg; sourceTree = "<group>"; };
 		048ACA721999F2EF009D2949 /* KUHeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KUHeightViewController.h; sourceTree = "<group>"; };
@@ -217,13 +214,11 @@
 		04EDF724199DA2560012E773 /* exercise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exercise.png; sourceTree = "<group>"; };
 		04EDF726199DA3010012E773 /* food-100 copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "food-100 copy.png"; sourceTree = "<group>"; };
 		04EDF728199DA4D80012E773 /* history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = history.png; sourceTree = "<group>"; };
-		04EDF72C199DA5EE0012E773 /* Active-Kids-are-Happy-Kids_Group-of-kids-running-outside_Mouths-of-Mums.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Active-Kids-are-Happy-Kids_Group-of-kids-running-outside_Mouths-of-Mums.jpg"; sourceTree = "<group>"; };
 		04EDF736199DADDA0012E773 /* staturehistory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = staturehistory.png; sourceTree = "<group>"; };
 		04EDF738199DAE450012E773 /* weighthistory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weighthistory.png; sourceTree = "<group>"; };
 		04EDF73A199DAED30012E773 /* sleephistory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sleephistory.png; sourceTree = "<group>"; };
 		04EDF73C199DAF370012E773 /* exercisehistory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exercisehistory.png; sourceTree = "<group>"; };
 		04EDF73E199DAFA80012E773 /* eathistory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eathistory.png; sourceTree = "<group>"; };
-		04EDF740199DB1530012E773 /* parallax-wallpaper-6 copy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "parallax-wallpaper-6 copy.jpg"; sourceTree = "<group>"; };
 		04EDF742199DB2260012E773 /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
 		04EDF744199DB48F0012E773 /* logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout.png; sourceTree = "<group>"; };
 		04EDF746199DB5540012E773 /* knowledge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = knowledge.png; sourceTree = "<group>"; };
@@ -269,11 +264,6 @@
 		0411F79F199B72960043C497 /* slide bar image */ = {
 			isa = PBXGroup;
 			children = (
-				0411F795199B72920043C497 /* icon_menu.png */,
-				0411F796199B72920043C497 /* title_bar_background.png */,
-				0411F797199B72920043C497 /* Default.png */,
-				0411F798199B72920043C497 /* Default@2x.png */,
-				0411F799199B72920043C497 /* Default-568h@2x.png */,
 				046B5A57199FB88500D8F56E /* loginback.png */,
 				046B5A59199FBF2800D8F56E /* signupback.png */,
 			);
@@ -398,16 +388,18 @@
 		048ACA2E1999E5E0009D2949 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				046B5A9319A4E5F300D8F56E /* 長高知識.png */,
+				046B5AA519A9787000D8F56E /* launch image1.png */,
+				046B5AA319A977F800D8F56E /* launch image2.png */,
+				046B5A9B19A973CA00D8F56E /* logo80.png */,
+				046B5A9F19A9742700D8F56E /* logo58.png */,
+				046B5A9919A9738800D8F56E /* logo120.png */,
 				046B5A8219A0AECF00D8F56E /* GA */,
 				046B59CC199F019800D8F56E /* space image */,
 				048F5B2E199D9526007B77F1 /* UIImage */,
 				0411F79F199B72960043C497 /* slide bar image */,
 				0411F77F199B3F7F0043C497 /* disclosure.png */,
 				0411F780199B3F7F0043C497 /* disclosure@2x.png */,
-				048ACA661999E9E0009D2949 /* 1.png */,
-				048ACA671999E9E0009D2949 /* 2.png */,
-				048ACA681999E9E0009D2949 /* 3.png */,
-				048ACA691999E9E0009D2949 /* 4.png */,
 				048ACA6E1999E9F1009D2949 /* login_1.png */,
 				048ACA701999EA25009D2949 /* wallpaper.jpg */,
 				048ACA5F1999E8E5009D2949 /* KUConstants.h */,
@@ -416,6 +408,7 @@
 				048ACA301999E5E0009D2949 /* InfoPlist.strings */,
 				048ACA331999E5E0009D2949 /* main.m */,
 				048ACA351999E5E0009D2949 /* KidsUpper-Prefix.pch */,
+				046B5AA919A98D8800D8F56E /* embeded.mobileprovision */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -526,6 +519,8 @@
 			children = (
 				046B59C9199EFF9D00D8F56E /* KUKnowledgeTableViewController.h */,
 				046B59CA199EFF9D00D8F56E /* KUKnowledgeTableViewController.m */,
+				046B5A8E19A4DB3000D8F56E /* KUKnowledgeViewController.h */,
+				046B5A8F19A4DB3000D8F56E /* KUKnowledgeViewController.m */,
 				046B59C2199EFE1F00D8F56E /* model */,
 			);
 			name = knowledge;
@@ -554,10 +549,8 @@
 				04EDF73E199DAFA80012E773 /* eathistory.png */,
 				04EDF73C199DAF370012E773 /* exercisehistory.png */,
 				04EDF73A199DAED30012E773 /* sleephistory.png */,
-				04EDF740199DB1530012E773 /* parallax-wallpaper-6 copy.jpg */,
 				04EDF736199DADDA0012E773 /* staturehistory.png */,
 				04EDF738199DAE450012E773 /* weighthistory.png */,
-				04EDF72C199DA5EE0012E773 /* Active-Kids-are-Happy-Kids_Group-of-kids-running-outside_Mouths-of-Mums.jpg */,
 				04EDF728199DA4D80012E773 /* history.png */,
 				04EDF726199DA3010012E773 /* food-100 copy.png */,
 				04EDF724199DA2560012E773 /* exercise.png */,
@@ -623,6 +616,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = MTI;
 				TargetAttributes = {
+					048ACA231999E5E0009D2949 = {
+						DevelopmentTeam = G9N83836UZ;
+					};
 					048ACA471999E5E0009D2949 = {
 						TestTargetID = 048ACA231999E5E0009D2949;
 					};
@@ -654,49 +650,45 @@
 			files = (
 				048F5B2B199D93EF007B77F1 /* happy kids.jpg in Resources */,
 				04EDF737199DADDA0012E773 /* staturehistory.png in Resources */,
-				0411F79B199B72920043C497 /* title_bar_background.png in Resources */,
 				04EDF743199DB2260012E773 /* setting.png in Resources */,
-				0411F79A199B72920043C497 /* icon_menu.png in Resources */,
+				046B5AA619A9787000D8F56E /* launch image1.png in Resources */,
 				04EDF727199DA3010012E773 /* food-100 copy.png in Resources */,
 				04EDF721199DA0FF0012E773 /* weight-100 copy.png in Resources */,
 				048ACA711999EA25009D2949 /* wallpaper.jpg in Resources */,
-				0411F79C199B72920043C497 /* Default.png in Resources */,
-				04EDF741199DB1530012E773 /* parallax-wallpaper-6 copy.jpg in Resources */,
 				04EDF749199DB6160012E773 /* chart.png in Resources */,
 				048ACA431999E5E0009D2949 /* Images.xcassets in Resources */,
-				048ACA6D1999E9E0009D2949 /* 4.png in Resources */,
-				048ACA6A1999E9E0009D2949 /* 1.png in Resources */,
 				04EDF71B199D9E640012E773 /* map_editing-25.png in Resources */,
 				046B59EC199F123700D8F56E /* 你知道你的孩子最高能長多高嗎?.jpg in Resources */,
-				048ACA6B1999E9E0009D2949 /* 2.png in Resources */,
 				04EDF751199E5C880012E773 /* menu.png in Resources */,
 				046B59F0199F142B00D8F56E /* 什麼是骨齡？.jpg in Resources */,
 				04EDF747199DB5540012E773 /* knowledge.png in Resources */,
 				04EDF73B199DAED30012E773 /* sleephistory.png in Resources */,
+				046B5A9A19A9738800D8F56E /* logo120.png in Resources */,
 				04EDF725199DA2560012E773 /* exercise.png in Resources */,
 				04EDF74D199E55DB0012E773 /* IMG_0230.PNG in Resources */,
 				048F5B34199D976A007B77F1 /* signin.png in Resources */,
 				04EDF71F199D9F740012E773 /* tape_measure2-100 copy.png in Resources */,
 				0411F788199B3F7F0043C497 /* disclosure.png in Resources */,
+				046B5AAA19A98D8800D8F56E /* embeded.mobileprovision in Resources */,
 				0411F789199B3F7F0043C497 /* disclosure@2x.png in Resources */,
-				048ACA6C1999E9E0009D2949 /* 3.png in Resources */,
 				04EDF729199DA4D80012E773 /* history.png in Resources */,
-				0411F79D199B72920043C497 /* Default@2x.png in Resources */,
 				04EDF73D199DAF370012E773 /* exercisehistory.png in Resources */,
-				04EDF72D199DA5EE0012E773 /* Active-Kids-are-Happy-Kids_Group-of-kids-running-outside_Mouths-of-Mums.jpg in Resources */,
 				048F5B32199D96DE007B77F1 /* signupbutton.png in Resources */,
 				048F5B3A199D9A23007B77F1 /* background.png in Resources */,
 				046B5A5A199FBF2800D8F56E /* signupback.png in Resources */,
+				046B5A9C19A973CA00D8F56E /* logo80.png in Resources */,
 				046B59EA199F119E00D8F56E /* 正確的使用生長曲線圖.jpg in Resources */,
 				04EDF73F199DAFA80012E773 /* eathistory.png in Resources */,
-				0411F79E199B72920043C497 /* Default-568h@2x.png in Resources */,
+				046B5AA019A9742700D8F56E /* logo58.png in Resources */,
 				048ACA321999E5E0009D2949 /* InfoPlist.strings in Resources */,
 				046B5A58199FB88600D8F56E /* loginback.png in Resources */,
 				048ACA3B1999E5E0009D2949 /* Main.storyboard in Resources */,
 				048ACA6F1999E9F1009D2949 /* login_1.png in Resources */,
 				04EDF739199DAE450012E773 /* weighthistory.png in Resources */,
+				046B5AA419A977F800D8F56E /* launch image2.png in Resources */,
 				04EDF723199DA1B10012E773 /* bed-100 copy.png in Resources */,
 				04EDF745199DB48F0012E773 /* logout.png in Resources */,
+				046B5A9419A4E5F300D8F56E /* 長高知識.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -764,6 +756,7 @@
 				048ACA7E1999F395009D2949 /* KUExerciseViewController.m in Sources */,
 				046B59C8199EFE4800D8F56E /* AstronomicalData.m in Sources */,
 				046B5A56199FB49900D8F56E /* KUSignupViewController.m in Sources */,
+				046B5A9019A4DB3000D8F56E /* KUKnowledgeViewController.m in Sources */,
 				0411F794199B53590043C497 /* VSDropdown.m in Sources */,
 				048ACA91199A0B76009D2949 /* KUSleepTableViewController.m in Sources */,
 				048ACA641999E973009D2949 /* KULoginViewController.m in Sources */,
@@ -839,7 +832,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Chun-Ping Wang (G9N83836UZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Chun-Ping Wang (G9N83836UZ)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -877,7 +871,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Chun-Ping Wang (G9N83836UZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Chun-Ping Wang (G9N83836UZ)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -897,9 +892,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C17EE581758242419BCC714E /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Chun-Ping Wang (G9N83836UZ)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KidsUpper/KidsUpper-Prefix.pch";
 				INFOPLIST_FILE = "KidsUpper/KidsUpper-Info.plist";
@@ -916,9 +910,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C17EE581758242419BCC714E /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Chun-Ping Wang (G9N83836UZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Chun-Ping Wang (G9N83836UZ)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KidsUpper/KidsUpper-Prefix.pch";
 				INFOPLIST_FILE = "KidsUpper/KidsUpper-Info.plist";

@@ -34,8 +34,10 @@
     _dropdown = [[VSDropdown alloc]initWithDelegate:self];
     [_dropdown setAdoptParentTheme:YES];
     [_dropdown setShouldSortItems:YES];
-
-
+    
+    self.eatKindTextField.delegate = self;
+    self.eatAmountTextField.delegate = self;
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     // Do any additional setup after loading the view.
 }
 
@@ -124,6 +126,10 @@
         
     }
     
+}
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end
