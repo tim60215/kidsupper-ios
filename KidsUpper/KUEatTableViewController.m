@@ -35,6 +35,8 @@
     self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
     PFQuery *query = [PFQuery queryWithClassName:KIDS_FOOD_KIND];
     PFQuery *queryAmount = [PFQuery queryWithClassName:KIDS_FOOD_AMOUNT];
+    [query whereKey:kCCUserProfileKey equalTo:[PFUser currentUser]];
+    [queryAmount whereKey:kCCUserProfileKey equalTo:[PFUser currentUser]];
     [query includeKey:kCCUserProfileKey];
     [queryAmount includeKey:kCCUserProfileKey];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {

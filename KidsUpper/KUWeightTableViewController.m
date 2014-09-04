@@ -32,6 +32,7 @@
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
     PFQuery *query = [PFQuery queryWithClassName:KIDS_WEIGHT];
+    [query whereKey:kCCUserProfileKey equalTo:[PFUser currentUser]];
     [query includeKey:kCCUserProfileKey];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {

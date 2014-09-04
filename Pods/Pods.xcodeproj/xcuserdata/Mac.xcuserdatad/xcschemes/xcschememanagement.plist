@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-MYBlurIntroductionView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-PNChart.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,32 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0A72B6D65C4B4D7E98B3B1D5</key>
+		<key>164EE79CED5F403287CC1EAF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3ECB3603BBA9473D80E88778</key>
+		<key>22676021101D4CB2886EAE0E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>46A9F1269BDE4B85A1328ACA</key>
+		<key>48CCC5EF4D5C459397BF9216</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>56FA4E751BB74CE6AEB9E21E</key>
+		<key>944FF9094E1048D4BB461360</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7105AF79FE5F4CD3B3A117F2</key>
+		<key>990B67FC59494211B48D7662</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D32572AA3BCA4E128C5DF38F</key>
+		<key>B28DB107315442D4AB9235E3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F5656E3BC309443891CD5EF7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

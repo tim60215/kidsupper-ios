@@ -10,5 +10,6 @@
 #import "GAITrackedViewController.h"
 
 
-@interface KUFirstViewController : GAITrackedViewController
+
+@interface KUFirstViewController : GAITrackedViewController 
 @end

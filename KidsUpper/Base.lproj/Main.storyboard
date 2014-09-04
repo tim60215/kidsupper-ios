@@ -197,7 +197,7 @@
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.81568634510000004" blue="0.70588237050000002" alpha="1" colorSpace="deviceRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="7hl-rj-PGL" detailTextLabel="skE-0z-fHs" style="IBUITableViewCellStyleValue1" id="URJ-Ni-ZFm">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="URJ-Ni-ZFm" id="Cgh-aA-iEl">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -591,7 +591,7 @@
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.81568634510000004" blue="0.70588237050000002" alpha="1" colorSpace="deviceRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="qc9-4U-TuT" detailTextLabel="ddT-32-Z6W" style="IBUITableViewCellStyleValue1" id="biP-by-uLZ">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="biP-by-uLZ" id="2u2-2U-X1I">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -792,7 +792,7 @@
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.81568634510000004" blue="0.70588237050000002" alpha="1" colorSpace="deviceRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="tgh-mV-Q2p" detailTextLabel="ZZf-2n-5ex" style="IBUITableViewCellStyleValue1" id="xqm-Cv-U2J">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xqm-Cv-U2J" id="YX7-n7-LIw">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -921,7 +921,7 @@
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.81568634510000004" blue="0.70588237050000002" alpha="1" colorSpace="deviceRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="7CY-S5-UHj" style="IBUITableViewCellStyleDefault" id="Ctf-B4-syU">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ctf-B4-syU" id="lrx-zG-wbS">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -996,6 +996,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6IZ-lB-bFY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2128" y="-705"/>
+        </scene>
+        <!--Auto Measure View Controller-->
+        <scene sceneID="dVW-w9-TeP">
+            <objects>
+                <viewController id="oF4-1B-o5I" customClass="KUAutoMeasureViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YVA-th-Hx2"/>
+                        <viewControllerLayoutGuide type="bottom" id="bxE-mM-NYU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lcQ-Dt-7K0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYp-TO-OpC">
+                                <rect key="frame" x="71" y="445" width="33" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="0.12127439850000001" green="0.22810609979999999" blue="0.865234375" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButton:" destination="oF4-1B-o5I" eventType="touchUpInside" id="9Zf-1l-TDC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gff-lv-GHH">
+                                <rect key="frame" x="197" y="445" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Finish">
+                                    <color key="titleColor" red="0.17144663020000001" green="0.15138072869999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="finishButton:" destination="oF4-1B-o5I" eventType="touchUpInside" id="bdQ-ea-mVx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r1y-Ph-SFd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1181" y="-803"/>
         </scene>
         <!--Height View Controller - 記錄身高-->
         <scene sceneID="VY4-8W-sfV">
@@ -1214,6 +1256,24 @@
             </objects>
             <point key="canvasLocation" x="193" y="180"/>
         </scene>
+        <!--Intro View Controller-->
+        <scene sceneID="q1b-xM-9N3">
+            <objects>
+                <viewController id="WPN-9h-DOf" customClass="KUIntroViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rB8-Vm-Scq"/>
+                        <viewControllerLayoutGuide type="bottom" id="ixJ-N3-9hb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QqC-6f-dnw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bfg-dl-T2e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-445" y="867"/>
+        </scene>
         <!--Signup View Controller - 註冊-->
         <scene sceneID="JYg-xN-kDL">
             <objects>
@@ -1344,10 +1404,10 @@
             </objects>
             <point key="canvasLocation" x="395" y="838"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Intro Bar View Controller-->
         <scene sceneID="Vex-rW-GRa">
             <objects>
-                <tabBarController id="8YX-ce-x5E" sceneMemberID="viewController">
+                <tabBarController id="8YX-ce-x5E" customClass="KUIntroBarViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="U3G-zd-Dav"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>

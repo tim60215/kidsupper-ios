@@ -21,7 +21,8 @@
      UIRemoteNotificationTypeBadge |
      UIRemoteNotificationTypeAlert |
      UIRemoteNotificationTypeSound];
-    // Override point for customization after application launch.
+    
+        // Override point for customization after application launch.
     [Parse setApplicationId:@"O9VpnKHnRIGnutXN6UfjsaAoPdsA7sv5EYzRzucR"
                   clientKey:@"1RXTUjo69Yh8u5Mwy9fD1SieSOcm7hForWsTOZGg"];
     [PFFacebookUtils initializeFacebook];

@@ -1,7 +1,8 @@
 PODS:
-  - Bolts (1.1.1)
+  - Bolts (1.1.2)
   - Facebook-iOS-SDK (3.17.0):
     - Bolts
+  - MYBlurIntroductionView (1.0.3)
   - Parse (1.2.20):
     - Facebook-iOS-SDK (~> 3.11)
   - PNChart (0.5):
@@ -9,12 +10,14 @@ PODS:
   - UICountingLabel (1.0.0)
 
 DEPENDENCIES:
+  - MYBlurIntroductionView
   - Parse
   - PNChart
 
 SPEC CHECKSUMS:
-  Bolts: 0ca796081c3e7c139bd86d6903c27f1b83036a5d
+  Bolts: 2635e8698a630774689441047f3465d78c48d485
   Facebook-iOS-SDK: f20274d809f112ba540842e2b6cbe50128d51b7b
+  MYBlurIntroductionView: 6caf60805eaa555538aba9e2615820fd6f07cd23
   Parse: 28c0dc54f30201a369d29a2f76c09fa43b2add16
   PNChart: 0d0cf4531de3aa7f2b12434a54845d70d9c9cfe3
   UICountingLabel: 0a0e9e34bf4690dbd127aaec552d19ed938087a9

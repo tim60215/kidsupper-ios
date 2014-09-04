@@ -27,7 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.screenName = @"TypeWeight";
+//    self.screenName = @"TypeWeight";
     self.weightTextField.delegate = self;
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     // Do any additional setup after loading the view.
@@ -83,9 +83,9 @@
         [kidsWeight saveInBackground];
         NSLog(@"%@", kidsWeight[@"myKidsWeight"]);
         
-        //        [[NSUserDefaults standardUserDefaults] setObject:self.heightTextField.text forKey:KIDS_HEIGHT];
-        //        [[NSUserDefaults standardUserDefaults] synchronize];
-        [self.delegate addKidsWeightObject:newKidsObject];
+//        [[NSUserDefaults standardUserDefaults] setObject:self.weightTextField.text forKey:KIDS_HEIGHT];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
+    [self.delegate addKidsWeightObject:newKidsObject];
         
     }
     else {
@@ -93,6 +93,7 @@
         [alertview show];
     }
     
+    [self.delegate addKidsWeightObject:[self returnNewKUKidsObject]];
     
 }
 

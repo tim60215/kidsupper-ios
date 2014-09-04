@@ -64,26 +64,26 @@
 - (IBAction)doneButton:(UIButton *)sender {
     KUKidsObject *newKidsObject = [self returnNewKUKidsObject];
     if (self.exerciseNameTextField.text.length!=0 && self.exerciserTimeTextField.text.length!=0) {
-        PFObject *kidsExerciseKind = [PFObject objectWithClassName:KIDS_EXERCISE_KIND];
-        PFObject *kidsExerciseTime = [PFObject objectWithClassName:KIDS_EXERCISE_TIME];
-        [kidsExerciseKind setObject:[PFUser currentUser] forKey:kCCUserProfileKey];
-        [kidsExerciseTime setObject:[PFUser currentUser] forKey:kCCUserProfileKey];
-        kidsExerciseKind[@"exerciseKind"] = newKidsObject.exerciseKind;
-        kidsExerciseKind[@"exerciseTime"] = newKidsObject.exerciseTime;
+        PFObject *exerciseKind = [PFObject objectWithClassName:KIDS_EXERCISE_KIND];
+        PFObject *exerciseTime = [PFObject objectWithClassName:KIDS_EXERCISE_TIME];
+        [exerciseKind setObject:[PFUser currentUser] forKey:kCCUserProfileKey];
+        [exerciseTime setObject:[PFUser currentUser] forKey:kCCUserProfileKey];
+        exerciseKind[@"exerciseKind"] = newKidsObject.exerciseKind;
+        exerciseTime[@"exerciseTime"] = newKidsObject.exerciseTime;
         
-        [kidsExerciseKind saveInBackground];
-        [kidsExerciseTime saveInBackground];
+        [exerciseKind saveInBackground];
+        [exerciseTime saveInBackground];
         
-        //        [[NSUserDefaults standardUserDefaults] setObject:self.weightTextField.text forKey:KIDS_WEIGHT];
-        //        [[NSUserDefaults standardUserDefaults] synchronize];
+        
         [self.delegate addKidsObject:newKidsObject];
+        
         
     }
     else {
         UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You haven't enter new records." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertview show];
     }
-
+    [self.delegate addKidsObject:[self returnNewKUKidsObject]];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{

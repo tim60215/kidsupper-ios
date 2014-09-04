@@ -13,7 +13,7 @@
 
 @interface KUChartTableViewController ()
 @property (strong, nonatomic) NSMutableArray *height;
-@property (strong, nonatomic) PFObject *myheight;
+@property (strong, nonatomic) NSObject *myheight;
 
 @end
 
@@ -46,8 +46,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-// In a story board-based application, you will often want to do a little preparation before navigation
+-(void)addKidsObject:(KUKidsObject *)kidsObject{}// In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Get the new view controller using [segue destinationViewController].
@@ -61,13 +60,7 @@
         [query includeKey:kCCUserProfileKey];
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error) {
-                self.height = [objects mutableCopy];
-                for (int i = 0; i<=[self.height count]; i ++) {
-                    self.myheight = [self.height objectAtIndex:i];
-                    
-                    NSNumber *myNumber = [NSNumber numberWithFloat:[[self.myheight objectForKey:@"height"] floatValue]];
-                    NSLog(@"%@",myNumber);
-                    UILabel * lineChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 90, SCREEN_WIDTH, 30)];
+                                    UILabel * lineChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 90, SCREEN_WIDTH, 30)];
                     lineChartLabel.text = @"身高變化";
                     lineChartLabel.textColor = PNFreshGreen;
                     lineChartLabel.font = [UIFont fontWithName:@"Avenir-Medium" size:23.0];
@@ -76,11 +69,25 @@
                     PNLineChart * lineChart = [[PNLineChart alloc] initWithFrame:CGRectMake(0, 135.0, SCREEN_WIDTH, 200.0)];
                     lineChart.yLabelFormat = @"%1.1f";
                     lineChart.backgroundColor = [UIColor clearColor];
-                    [lineChart setXLabels:@[@"SEP 1",@"SEP 2",@"SEP 3",@"SEP 4",@"SEP 5",@"6",@"7"]];
+                    [lineChart setXLabels:@[@"SEP 1",@"SEP 2",@"SEP 3",@"SEP 4",@"SEP 5",@"6",@"7",@"8",@"9"]];
                     lineChart.showCoordinateAxis = YES;
                     
                     // Line Chart Nr.1
-                    NSArray * data01Array = @[myNumber];
+                    NSMutableArray * data01Array = [[NSMutableArray alloc] init];
+                for (int i = 0; i<=([self.height count]-1); i++) {
+                    
+                    
+                    self.height = [objects mutableCopy];
+                    self.myheight = [[self.height valueForKey:@"height"] objectAtIndex:i];
+                    NSString *myString = [NSString stringWithFormat:@"%@",self.myheight];
+                    NSLog(@"%@",self.myheight);
+                    NSLog(@"%@",myString);
+                    
+                    
+                    NSNumber *myNumber = [NSNumber numberWithFloat:[myString floatValue]];
+                    NSLog(@"%@",myNumber);
+                    [data01Array addObject:myNumber];
+                    }
                     PNLineChartData *data01 = [PNLineChartData new];
                     data01.color = PNFreshGreen;
                     data01.itemCount = lineChart.xLabels.count;
@@ -89,7 +96,6 @@
                         CGFloat yValue = [data01Array[index] floatValue];
                         return [PNLineChartDataItem dataItemWithY:yValue];
                     };
-                    
                     // Line Chart Nr.2
                     NSArray * data02Array =@[@60.1, @160.1, @126.4, @262.2, @186.2, @127.2, @176.2];
                     PNLineChartData *data02 = [PNLineChartData new];
@@ -111,10 +117,16 @@
                     
                     viewController.title = @"身高變化";
                     
-                    
 
-                }
+
+                
+
+                
+                
+
+              
             }
+                
             else NSLog(@"%@",error);
         }];
         

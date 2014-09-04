@@ -74,7 +74,7 @@
         UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You haven't enter new records." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertview show];
     }
-    
+     [self.delegate addKidsObject:[self returnNewKUKidsObject]];
     
 }
 

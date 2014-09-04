@@ -38,7 +38,8 @@
     self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
     
     PFQuery *query = [PFQuery queryWithClassName:KIDS_HEIGHT];
-    [query includeKey:kCCUserProfileKey];
+    [query whereKey:kCCUserProfileKey equalTo:[PFUser currentUser]];
+//    [query includeKey:kCCUserProfileKey];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             

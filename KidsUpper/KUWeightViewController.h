@@ -16,7 +16,7 @@
 
 @end
 
-@interface KUWeightViewController : GAITrackedViewController <UITextFieldDelegate>
+@interface KUWeightViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) id<KUWeightViewControllerDelegate>delegate;
 @property (strong, nonatomic) IBOutlet UITextField *weightTextField;
 - (IBAction)doneButton:(UIButton *)sender;
